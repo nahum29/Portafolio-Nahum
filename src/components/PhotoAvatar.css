@@ -1,0 +1,218 @@
+.photo-avatar-container {
+  position: relative;
+  width: 450px;
+  height: 400px;
+  overflow: hidden;
+}
+
+/* Fondo dividido */
+.split-background {
+  position: absolute;
+  inset: 0;
+  display: flex;
+}
+
+.bg-color {
+  flex: 1;
+  background: linear-gradient(135deg, #FF9D00 0%, #FFB800 100%);
+  position: relative;
+  z-index: 1;
+}
+
+.bg-dark {
+  flex: 1;
+  background: #1a1a1a;
+  position: relative;
+  z-index: 1;
+}
+
+/* Contenedor principal */
+.photo-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Texto grande de fondo */
+.big-text-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  font-size: 80px;
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -3px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.15);
+  text-stroke: 2px rgba(255, 255, 255, 0.15);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Marco de la foto */
+.photo-frame {
+  position: relative;
+  z-index: 10;
+  width: 280px;
+  height: 320px;
+}
+
+.frame-border {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.9) 0%, 
+    rgba(255, 255, 255, 0.7) 100%
+  );
+  border-radius: 8px;
+  box-shadow: 
+    0 30px 80px rgba(0, 0, 0, 0.4),
+    0 10px 30px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease;
+}
+
+.photo-frame:hover .frame-border {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 4px;
+  display: block;
+  filter: contrast(1.1) brightness(1.05);
+}
+
+.photo-overlay {
+  position: absolute;
+  inset: 8px;
+  border-radius: 4px;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(255, 157, 0, 0.1) 100%
+  );
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+/* Líneas decorativas */
+.decorative-line {
+  position: absolute;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    #FF9D00 50%, 
+    transparent 100%
+  );
+  transform-origin: left;
+}
+
+.line-1 {
+  top: 30%;
+  left: 0;
+  width: 100px;
+  z-index: 5;
+}
+
+.line-2 {
+  bottom: 30%;
+  right: 0;
+  width: 120px;
+  z-index: 5;
+  transform-origin: right;
+}
+
+/* Etiqueta con nombre */
+.name-label {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  padding: 8px 20px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 2px solid #FF9D00;
+  border-radius: 6px;
+  z-index: 15;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.label-text {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Elementos flotantes decorativos */
+.floating-element {
+  position: absolute;
+  z-index: 3;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.element-1 {
+  width: 60px;
+  height: 60px;
+  top: 15%;
+  left: 10%;
+  background: radial-gradient(circle, 
+    rgba(255, 157, 0, 0.4) 0%, 
+    transparent 70%
+  );
+  filter: blur(20px);
+}
+
+.element-2 {
+  width: 80px;
+  height: 80px;
+  bottom: 20%;
+  right: 15%;
+  background: radial-gradient(circle, 
+    rgba(255, 184, 0, 0.3) 0%, 
+    transparent 70%
+  );
+  filter: blur(25px);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .photo-avatar-container {
+    width: 100%;
+    max-width: 350px;
+    height: 380px;
+  }
+
+  .photo-frame {
+    width: 220px;
+    height: 280px;
+  }
+
+  .big-text-bg {
+    font-size: 60px;
+  }
+
+  .name-label {
+    bottom: 15px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
