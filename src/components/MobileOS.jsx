@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTheme } from '../context/ThemeContext'
 import './MobileOS.css'
@@ -7,7 +7,17 @@ function MobileOS() {
   const { theme, toggleTheme } = useTheme()
   const [currentScreen, setCurrentScreen] = useState('home')
   const [openApp, setOpenApp] = useState(null)
-  const [time] = useState(new Date().toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' }))
+  const [time, setTime] = useState(
+    new Date().toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' })
+  )
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTime(new Date().toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' }))
+    }, 1000)
+
+    return () => clearInterval(timer)
+  }, [])
 
   const apps = [
     { id: 'about', name: 'Sobre Mí', icon: '👨‍💻', color: '#4285F4' },

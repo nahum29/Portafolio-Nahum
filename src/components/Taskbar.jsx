@@ -1,13 +1,21 @@
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useTheme } from '../context/ThemeContext'
 import './Taskbar.css'
 
 function Taskbar({ windows, activeWindow, onWindowClick }) {
   const { theme, toggleTheme } = useTheme()
-  const currentTime = new Date().toLocaleTimeString('es-MX', { 
-    hour: '2-digit', 
-    minute: '2-digit' 
-  })
+  const [currentTime, setCurrentTime] = useState(
+    new Date().toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' })
+  )
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date().toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' }))
+    }, 1000)
+
+    return () => clearInterval(timer)
+  }, [])
 
   return (
     <motion.div 
