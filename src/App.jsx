@@ -1,14 +1,32 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Login from './components/Login'
 import Desktop from './components/Desktop'
+import MobileOS from './components/MobileOS'
 import './App.css'
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   const handleLogin = () => {
     setIsLoggedIn(true)
+  }
+
+  // Si es móvil, mostrar directamente la versión móvil
+  if (isMobile) {
+    return <MobileOS />
   }
 
   return (

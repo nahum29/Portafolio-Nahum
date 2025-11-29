@@ -1,1 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="31.88" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 257"><defs><linearGradient id="IconifyId1813088fe1fbc01fb466" x1="-.828%" x2="57.636%" y1="7.652%" y2="78.411%"><stop offset="0%" stop-color="#41D1FF"></stop><stop offset="100%" stop-color="#BD34FE"></stop></linearGradient><linearGradient id="IconifyId1813088fe1fbc01fb467" x1="43.376%" x2="50.316%" y1="2.242%" y2="89.03%"><stop offset="0%" stop-color="#FFEA83"></stop><stop offset="8.333%" stop-color="#FFDD35"></stop><stop offset="100%" stop-color="#FFA800"></stop></linearGradient></defs><path fill="url(#IconifyId1813088fe1fbc01fb466)" d="M255.153 37.938L134.897 252.976c-2.483 4.44-8.862 4.466-11.382.048L.875 37.958c-2.746-4.814 1.371-10.646 6.827-9.67l120.385 21.517a6.537 6.537 0 0 0 2.322-.004l117.867-21.483c5.438-.991 9.574 4.796 6.877 9.62Z"></path><path fill="url(#IconifyId1813088fe1fbc01fb467)" d="M185.432.063L96.44 17.501a3.268 3.268 0 0 0-2.634 3.014l-5.474 92.456a3.268 3.268 0 0 0 3.997 3.378l24.777-5.718c2.318-.535 4.413 1.507 3.936 3.838l-7.361 36.047c-.495 2.426 1.782 4.5 4.151 3.78l15.304-4.649c2.372-.72 4.652 1.36 4.15 3.788l-11.698 56.621c-.732 3.542 3.979 5.473 5.943 2.437l1.313-2.028l72.516-144.72c1.215-2.423-.88-5.186-3.54-4.672l-25.505 4.922c-2.396.462-4.435-1.77-3.759-4.114l16.646-57.705c.677-2.35-1.37-4.583-3.769-4.113Z"></path></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 width="800px" height="800px" viewBox="0 0 32 32" xml:space="preserve">
+<style type="text/css">
+	.avocado_een{fill:#231F20;}
+	.avocado_twee{fill:#3D3935;}
+	.avocado_negentien{fill:#E0A838;}
+	.avocado_twintig{fill:#EAD13F;}
+	.avocado_acht{fill:#A3AEB5;}
+	.avocado_zeven{fill:#788287;}
+	.avocado_tien{fill:#C3CC6A;}
+	.st0{fill:#FFFAEE;}
+	.st1{fill:#716558;}
+	.st2{fill:#DBD2C1;}
+	.st3{fill:#D1712A;}
+	.st4{fill:#CC4121;}
+	.st5{fill:#8D3E93;}
+	.st6{fill:#248EBC;}
+	.st7{fill:#6F9B45;}
+	.st8{fill:#AF9480;}
+</style>
+<g>
+	<g>
+		<rect x="0.5" y="4.5" class="avocado_twee" width="31" height="21"/>
+	</g>
+	<g>
+		<path class="avocado_acht" d="M0.5,4.5v21h13v4h6v-4h12v-21H0.5z M30,24H2V6h28V24z"/>
+	</g>
+	<rect x="13.5" y="25.5" class="avocado_zeven" width="6" height="1.5"/>
+	<path class="avocado_een" d="M32,26V4H0v22h13v3h-1v1h9v-1h-1v-3H32z M1,25V5h30v20H1z M19,29h-5v-3h5V29z"/>
+	<path class="avocado_tien" d="M9,10H6V9h3V10z M7,11v1h3v-1H7z M7,18h3v-1H7V18z M6,20h3v-1H6V20z"/>
+	<g>
+		<g>
+			<path class="avocado_negentien" d="M22,13v1H8v-1H22z M8,16h14v-1H8V16z"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path class="avocado_twintig" d="M17,12h-6v-1h6V12z M21,9H10v1h11V9z"/>
+		</g>
+	</g>
+</g>
+</svg>
