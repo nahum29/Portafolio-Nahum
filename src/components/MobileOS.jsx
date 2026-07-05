@@ -151,7 +151,7 @@ function AppContent({ appId, onBack }) {
               <span className="info-icon">📍</span>
               <div>
                 <strong>Ubicación</strong>
-                <p>Guadalajara, Jalisco</p>
+                <p>Bahia de Banderas, Nayarit</p>
               </div>
             </div>
             <div className="info-card">
@@ -186,19 +186,19 @@ function AppContent({ appId, onBack }) {
             title="ALAIA Mi Bienestar"
             desc="Plataforma de cursos online con WordPress y sistema de pagos"
             tags={['WordPress', 'E-learning']}
-            link="https://alaiaamibienestar.com/"
+            link="https://alaiamibienestar.com/"
           />
           <ProjectCard 
             title="Invitación de Boda"
             desc="Invitación digital interactiva con animaciones y confirmación RSVP"
             tags={['React', 'Animaciones']}
-            link="https://boda-naylu.netlify.app/"
+            link="https://bodamisaelylibni.netlify.app/"
           />
           <ProjectCard 
             title="Separador CMYK"
             desc="Herramienta para separación de colores CMYK para diseñadores gráficos"
             tags={['JavaScript', 'Canvas']}
-            link="https://separador-de-colores-cmyk.netlify.app/"
+            link="https://separador-de-color-nahum.netlify.app/"
           />
         </div>
       </>

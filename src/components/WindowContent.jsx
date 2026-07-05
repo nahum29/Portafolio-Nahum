@@ -18,7 +18,7 @@ function WindowContent({ type }) {
         <div className="info-grid">
           <div className="info-item">
             <span className="info-label">📍 Ubicación:</span>
-            <span className="info-value">Guadalajara, Jalisco, México</span>
+            <span className="info-value">Bahia de Banderas, Nayarit, México</span>
           </div>
           <div className="info-item">
             <span className="info-label">💼 Rol:</span>
