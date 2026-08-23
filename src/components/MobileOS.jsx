@@ -71,7 +71,7 @@ function MobileOS() {
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.2, type: 'spring' }}
               >
-                <img src="/images/nahum.jpg" alt="Nahum Emmanuel" />
+                <img src="/images/nahum.jpeg" alt="Nahum Emmanuel" />
               </motion.div>
               <motion.h1
                 initial={{ y: 20, opacity: 0 }}

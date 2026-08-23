@@ -37,7 +37,7 @@ function PhotoAvatar() {
         >
           <div className="frame-border">
             <img 
-              src="/images/nahum.jpg" 
+              src="/images/nahum.jpeg" 
               alt="Nahum Emmanuel" 
               className="photo-img"
             />

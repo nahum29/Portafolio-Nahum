@@ -73,7 +73,7 @@ npm test         # Ejecuta tests unitarios
 portfolio-nahum/
 ├── public/
 │   ├── images/          # Imágenes estáticas
-│   │   ├── nahum.jpg
+│   │   ├── nahum.jpeg
 │   │   └── fondo-inicio.jpg
 │   └── video/           # Videos de fondo
 │       └── fondo-escritorio.mp4
