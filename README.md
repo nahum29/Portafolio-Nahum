@@ -141,7 +141,7 @@ Los archivos generados estarán en la carpeta `dist/`
 ## 👨‍💻 Sobre el Desarrollador
 
 **Nahum Emmanuel Gutiérrez González**
-- 📍 Bahia de Banderas, Nayarit, México
+- 📍 Guadalajara, Jalisco, México
 - 💼 Desarrollador Frontend Jr
 - 🚀 Especializado en React y tecnologías modernas
 

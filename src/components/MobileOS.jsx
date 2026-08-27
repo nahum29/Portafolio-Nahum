@@ -151,7 +151,7 @@ function AppContent({ appId, onBack }) {
               <span className="info-icon">📍</span>
               <div>
                 <strong>Ubicación</strong>
-                <p>Bahia de Banderas, Nayarit</p>
+                <p>Guadalajara, Jalisco</p>
               </div>
             </div>
             <div className="info-card">
