@@ -1,235 +1,44 @@
-# Documentación Técnica - Portfolio Nahum
+# Documentación técnica
 
-## 🏗️ Arquitectura del Proyecto
+## Flujo
 
-### Estructura de Componentes
+`App.jsx` utiliza el breakpoint de 768 px para elegir entre la bienvenida/escritorio y `MobileOS`.
+`ThemeProvider` comparte el tema mediante `useTheme.js` y tolera navegadores con almacenamiento deshabilitado.
 
-```
-App.jsx
-├── Login (Pantalla de inicio)
-│   └── PhotoAvatar (Avatar con animaciones)
-└── Desktop (Escritorio principal)
-    ├── DesktopIcon[] (Iconos arrastrables)
-    ├── Window[] (Sistema de ventanas)
-    │   └── WindowContent (Contenido dinámico)
-    └── Taskbar (Barra de tareas)
-```
+## Ventanas
 
-## 🔧 Componentes Principales
+`Desktop.jsx` conserva las ventanas en orden de apilamiento. Al abrir o enfocar una ventana se lleva al final de la lista y se restaura si estaba minimizada. La última ventana visible determina la selección de la barra de tareas.
 
-### 1. App.jsx
-- Maneja el estado global de la aplicación
-- Controla la transición entre Login y Desktop
-- Gestiona el array de ventanas abiertas
+La posición y tamaño se ajustan al viewport durante cada render. Maximizar utiliza el espacio disponible sobre la barra de 68 px; restaurar recupera los límites normales. El estado existe durante la sesión del escritorio, no se persiste al recargar.
 
-### 2. Login.jsx
-- Pantalla de bienvenida estilo Windows 11
-- Animaciones de entrada con Framer Motion
-- Fondo estático con imagen
-- Componente PhotoAvatar integrado
+`Window.jsx` utiliza Pointer Events y captura de puntero para arrastrar únicamente desde el título. Calcula el desplazamiento respecto al punto inicial, sin confundir la posición del cursor con la esquina de la ventana. Los botones del título quedan excluidos del arrastre.
 
-### 3. Desktop.jsx
-- Contenedor principal del sistema de ventanas
-- Video de fondo con autoplay y loop
-- Grid de iconos arrastrables
-- Gestión del z-index de ventanas
+## Contenido compartido
 
-### 4. Window.jsx
-- Ventanas draggables con react-draggable
-- Sistema de minimizar/cerrar
-- Control de foco (z-index)
-- Límites de arrastre (bounds)
+`src/data/portfolio.js` es la fuente de datos para proyectos, habilidades, contactos y certificados.
+`WindowContent.jsx` muestra ese contenido tanto en escritorio como en móvil. Los detalles de cada proyecto usan el elemento nativo `details`.
+Cada proyecto puede declarar `image` con `src`, `width` y `height` reales; si no la tiene, se muestra una portada de texto e icono en lugar de una captura inventada.
 
-### 5. Taskbar.jsx
-- Barra inferior estilo Windows 11
-- Botón de inicio animado (logo N)
-- Lista de ventanas activas
-- Reloj en tiempo real
-- Toggle de tema (dark/light)
+## Navegación y foco
 
-### 6. WindowContent.jsx
-- Contenido dinámico según tipo de ventana
-- Secciones: Sobre Mí, Proyectos, Habilidades, Contacto
-- Certificados con links a PDFs
-- Botón de descarga de CV
+Al abrir una app en móvil, `MobileOS.jsx` guarda la *clave* del botón que la abrió (`data-focus-key`), no el nodo. Al volver al inicio se busca de nuevo ese nodo en el DOM, que ya fue desmontado y vuelto a montar. Si no se encuentra, el foco cae al botón Inicio de la barra inferior. Al entrar a una app el foco pasa al encabezado de la pantalla.
 
-### 7. ThemeContext.jsx
-- Context API para manejo de tema
-- Persistencia en localStorage
-- Variables CSS dinámicas
+`Desktop.jsx` mantiene un `h1` visualmente oculto cuando hay una ventana abierta, porque el `h1` de bienvenida queda oculto en ese estado.
 
-## 🎨 Sistema de Estilos
+## SEO
 
-### Variables CSS (index.css)
+`public/robots.txt` y `public/sitemap.xml` se publican sin transformación. `index.html` incluye meta tags sociales y un bloque JSON-LD (`schema.org/Person`) con el perfil profesional. El fondo de la barra de direcciones usa `theme-color` alineado a `--bg-primary`.
 
-```css
-/* Dark Theme */
---bg-primary: #0a0a0a
---bg-secondary: rgba(20, 20, 30, 0.9)
---bg-tertiary: rgba(255, 255, 255, 0.05)
---bg-hover: rgba(255, 255, 255, 0.1)
---text-primary: #ffffff
---text-secondary: rgba(255, 255, 255, 0.9)
---text-tertiary: rgba(255, 255, 255, 0.7)
---border-color: rgba(255, 255, 255, 0.1)
---shadow-color: rgba(0, 0, 0, 0.3)
+## Estilos y recursos
 
-/* Light Theme */
---bg-primary: #f5f5f5
---bg-secondary: rgba(255, 255, 255, 0.95)
---bg-tertiary: rgba(0, 0, 0, 0.05)
---bg-hover: rgba(0, 0, 0, 0.08)
---text-primary: #1a1a1a
---text-secondary: #2d2d2d
---text-tertiary: #4a4a4a
---border-color: rgba(0, 0, 0, 0.1)
---shadow-color: rgba(0, 0, 0, 0.15)
-```
+Las variables CSS en `index.css` definen colores para ambos temas.
+El anillo de foco usa un color distinto en tema claro (`#17427e`) para mantener el contraste sobre superficies blancas.
+Los contenedores móviles usan `100dvh`, áreas seguras y desplazamiento interno para mantener disponible la navegación.
+El video se monta solo por petición explícita y cuando el sistema no pide reducir movimiento.
+Las capturas de proyectos se cargan con `loading="lazy"` y un espacio reservado que evita saltos del diseño.
+La proporción `.project-preview` se define únicamente en `WindowContent.css` para no depender del orden de importación de las hojas de estilo.
 
-### Efectos Visuales
-- **Glassmorphism**: backdrop-filter: blur(20px)
-- **Gradientes neón**: linear-gradient con colores vibrantes
-- **Sombras múltiples**: box-shadow con varias capas
-- **Transformaciones GPU**: transform: translate3d()
+## Verificación
 
-## 🔄 Flujo de Datos
-
-### Estado de Ventanas
-```javascript
-windows = [
-  {
-    id: string,
-    title: string,
-    type: string,
-    minimized: boolean
-  }
-]
-```
-
-### Ciclo de Vida de Ventana
-1. Usuario hace clic en icono desktop
-2. handleIconDoubleClick agrega ventana al array
-3. Window.jsx renderiza la ventana
-4. WindowContent.jsx carga contenido según type
-5. Usuario puede minimizar/cerrar desde Taskbar o Window
-6. Estado se actualiza y re-renderiza
-
-## 🧪 Testing
-
-### Setup (src/test/setup.js)
-- Mock de localStorage
-- Configuración de @testing-library
-- Cleanup automático entre tests
-
-### Tests Implementados
-- **PhotoAvatar.test.jsx**: 3 tests
-- **Taskbar.test.jsx**: 3 tests
-
-### Ejecutar Tests
-```bash
-npm test           # Modo watch
-npm run test:ui    # UI de Vitest
-npm run test:run   # Ejecución única
-```
-
-## 📦 Build y Deployment
-
-### Proceso de Build
-```bash
-npm run build
-```
-
-Genera:
-- `/dist` - Archivos optimizados
-- Assets con hash para cache busting
-- CSS y JS minificados
-- Assets comprimidos
-
-### Netlify Deployment
-- Build automático desde GitHub
-- Configuración en netlify.toml
-- Headers de seguridad
-- Cache de assets estáticos
-- Redirects para SPA
-
-## 🔐 Seguridad
-
-### Headers HTTP
-- X-Frame-Options: DENY
-- X-XSS-Protection: 1; mode=block
-- X-Content-Type-Options: nosniff
-- Referrer-Policy: strict-origin-when-cross-origin
-
-### Buenas Prácticas
-- No console.logs en producción
-- rel="noopener noreferrer" en links externos
-- Validación de inputs
-- Escape de contenido dinámico
-
-## 📊 Performance
-
-### Optimizaciones Implementadas
-1. **Code Splitting**: Componentes lazy load
-2. **Asset Optimization**: Imágenes comprimidas
-3. **CSS Optimization**: Propiedades GPU-accelerated
-4. **Caching**: Headers de cache agresivo
-5. **Tree Shaking**: Vite elimina código no usado
-
-### Métricas Objetivo
-- First Contentful Paint: < 1.5s
-- Time to Interactive: < 3s
-- Lighthouse Performance: > 90
-
-## 🐛 Debugging
-
-### Herramientas
-- React DevTools
-- Vite HMR (Hot Module Replacement)
-- Console.log removido en producción
-- ESLint para calidad de código
-
-## 🚀 Futuras Mejoras
-
-### Corto Plazo
-- [ ] Agregar más proyectos
-- [ ] Mejorar animaciones de hover
-- [ ] Implementar dark/light theme automático según sistema
-
-### Mediano Plazo
-- [ ] Blog integrado
-- [ ] Sistema de comentarios
-- [ ] Formulario de contacto funcional
-- [ ] Analytics integrado
-
-### Largo Plazo
-- [ ] i18n (Inglés/Español)
-- [ ] PWA con service workers
-- [ ] Modo offline
-- [ ] Backend para formularios
-
-## 📝 Mantenimiento
-
-### Actualización de Dependencias
-```bash
-npm outdated          # Ver paquetes desactualizados
-npm update            # Actualizar minor/patch
-npm install <pkg>@latest  # Actualizar major version
-```
-
-### Checklist Pre-Deploy
-- [ ] Tests pasando (npm test)
-- [ ] No errores de lint (npm run lint)
-- [ ] Build exitoso (npm run build)
-- [ ] Preview funcional (npm run preview)
-- [ ] Assets optimizados
-- [ ] SEO tags actualizados
-
-## 🤝 Contribuir
-
-Ver README.md para guía de contribución.
-
----
-
-**Última actualización**: Noviembre 2025
-**Versión**: 1.0.0
-**Mantenedor**: Nahum Emmanuel Gutiérrez González
+Ejecuta `npm run lint`, `npm run test:run` y `npm run build`.
+Las pruebas de componentes no sustituyen la revisión visual en el navegador ni una auditoría Lighthouse. Para verificar arrastre, prueba la barra de título, los bordes de pantalla, maximizar/restaurar y el cambio de viewport. Revisa móvil y ambos temas.

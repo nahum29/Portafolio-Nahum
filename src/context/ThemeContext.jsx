@@ -1,36 +1,14 @@
-import { createContext, useContext, useState, useEffect } from 'react'
-
-const ThemeContext = createContext()
-
+import { useState, useEffect } from 'react'
+import { ThemeContext } from './useTheme'
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
-    // Obtener tema guardado en localStorage
-    const savedTheme = localStorage.getItem('portfolio-theme')
-    return savedTheme || 'dark'
+    try { return localStorage.getItem('portfolio-theme') === 'light' ? 'light' : 'dark' }
+    catch { return 'dark' }
   })
-
   useEffect(() => {
-    // Aplicar tema al body
     document.body.setAttribute('data-theme', theme)
-    // Guardar en localStorage
-    localStorage.setItem('portfolio-theme', theme)
+    try { localStorage.setItem('portfolio-theme', theme) } catch { /* Storage may be disabled. */ }
   }, [theme])
-
-  const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'dark' ? 'light' : 'dark')
-  }
-
-  return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  )
-}
-
-export function useTheme() {
-  const context = useContext(ThemeContext)
-  if (!context) {
-    throw new Error('useTheme must be used within ThemeProvider')
-  }
-  return context
+  const toggleTheme = () => setTheme(value => value === 'dark' ? 'light' : 'dark')
+  return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>
 }

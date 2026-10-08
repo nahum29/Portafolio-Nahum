@@ -1,187 +1,102 @@
-# 💼 Portfolio Personal - Nahum Emmanuel Gutiérrez González
+# Portafolio de Nahum Emmanuel Gutiérrez González
 
-[![Netlify Status](https://img.shields.io/badge/Netlify-Deployed-00C7B7?style=for-the-badge&logo=netlify)](https://portfolio-nahum.netlify.app)
-[![React](https://img.shields.io/badge/React-19.2.0-61DAFB?style=for-the-badge&logo=react)](https://reactjs.org/)
-[![Vite](https://img.shields.io/badge/Vite-7.2.4-646CFF?style=for-the-badge&logo=vite)](https://vitejs.dev/)
+Portafolio personal con escritorio inspirado en Windows y navegación móvil inspirada en Android. Incluye seis proyectos desarrollados íntegramente por Nahum, habilidades, certificados y CV.
 
-> Portfolio interactivo con interfaz estilo Windows 11, presentando proyectos reales y habilidades de desarrollo web.
+## Desarrollo local
 
-## 🌟 Características Principales
+Requiere Node.js compatible con las dependencias del archivo de bloqueo. El despliegue usa Node.js 20.11 (fijado en `netlify.toml`); para desarrollo y pruebas sirve Node.js 20 o 22.12 y superior.
 
-- **🖥️ Interfaz tipo Windows 11**: Experiencia de usuario única con login screen auténtico
-- **🎨 Animaciones Fluidas**: Implementadas con Framer Motion para transiciones suaves
-- **📱 Totalmente Responsivo**: Diseño adaptable a cualquier dispositivo
-- **🎬 Fondos Dinámicos**: Video de fondo en desktop, imagen en login
-- **🪟 Sistema de Ventanas**: Manejo de múltiples ventanas con drag & drop
-- **✨ Efectos Visuales Modernos**: Glassmorphism, gradientes neón, y más
-
-## 🛠️ Tecnologías Utilizadas
-
-### Frontend
-- **React 19.2.0** - Biblioteca principal de UI
-- **Vite 7.2.4** - Build tool y dev server
-- **Framer Motion 12.23** - Librería de animaciones
-- **CSS3** - Estilos personalizados con efectos avanzados
-
-### Herramientas de Desarrollo
-- **ESLint** - Linting y calidad de código
-- **Git** - Control de versiones
-- **Netlify** - Deployment y hosting
-
-## 📦 Instalación
-
-### Prerrequisitos
-- Node.js v18 o superior
-- npm o yarn
-
-### Pasos
-
-1. **Clonar el repositorio**
-```bash
-git clone https://github.com/nahum29/portfolio-nahum.git
-cd portfolio-nahum
-```
-
-2. **Instalar dependencias**
-```bash
-npm install
-```
-
-3. **Iniciar servidor de desarrollo**
-```bash
+```sh
+npm ci
 npm run dev
 ```
 
-4. **Abrir en navegador**
+Abre la dirección que indique Vite (normalmente http://localhost:5173).
+
+## Scripts
+
+- `npm run dev`: servidor local.
+- `npm run build`: compilación de producción en `dist/`.
+- `npm run preview`: vista previa de esa compilación.
+- `npm run lint`: análisis estático con ESLint.
+- `npm run test:run`: pruebas automatizadas con Vitest y Testing Library.
+- `npm test`: pruebas en modo observación.
+
+## Stack
+
+React 19, Vite 5 y CSS. Las versiones exactas reproducibles están en `package-lock.json`.
+
+## Experiencia
+
+- Bienvenida con acceso al escritorio, proyectos y descarga del CV.
+- Ventanas que se pueden mover desde su barra de título, minimizar, restaurar, maximizar y cerrar.
+- Doble clic en la barra de título para maximizar o restaurar.
+- Botón N. para mostrar el escritorio; la barra de tareas permite recuperar las ventanas.
+- Límites ajustados al tamaño de pantalla para mantener los controles por encima de la barra de tareas.
+- Versión móvil hasta 768 px, con los mismos contenidos y navegación de inicio y regreso.
+- Tema claro y oscuro con preferencia guardada cuando el almacenamiento está disponible.
+- Fondo estático por defecto. El video de aproximadamente 6,2 MB se carga solo al elegir «Animar fondo».
+- La preferencia del sistema de reducir movimiento deshabilita el video y las animaciones CSS.
+- Botones accesibles por teclado, foco visible y controles de ventana con nombres descriptivos.
+
+## Contenido y capturas
+
+Los proyectos, habilidades, contactos y certificados se editan en `src/data/portfolio.js`.
+Ambas interfaces renderizan `WindowContent.jsx`; no mantienen listas separadas.
+
+Las capturas de cinco proyectos se guardan en `public/images/projects/` en formato JPEG, con sus dimensiones reales declaradas en `src/data/portfolio.js` para reservar el espacio antes de cargarlas. Se obtuvieron de sus sitios públicos el 29 de septiembre de 2026. Su tamaño total es inferior a 300 KB y se cargan de forma diferida.
+
+El dominio de Funeraria Hermosa Provincia no resolvió durante la revisión. Su ficha conserva el enlace original y utiliza una portada de texto e icono, no una captura inventada. Cuando el sitio esté disponible, añade su captura y actualiza la ficha.
+
+Las descripciones reflejan las funcionalidades del portafolio original y la autoría confirmada por Nahum. No se afirman mejoras de ventas, tráfico o rendimiento sin medición.
+
+## SEO
+
+`public/robots.txt` permite el rastreo y apunta al sitemap; `public/sitemap.xml` lista la raíz y el CV.
+`index.html` incluye meta tags de descripción, Open Graph, Twitter Card y datos estructurados JSON-LD del perfil (`schema.org/Person`).
+
+## Verificación
+
+La suite incluye regresiones para restaurar ventanas minimizadas, gestionar la ventana activa al cerrar, maximizar/restaurar, abrir secciones con teclado, cargar el video bajo demanda y acceder a los seis proyectos en móvil.
+
+### Lighthouse
+
+Medición con Lighthouse 12.8.2 sobre `dist/` servido en local (móvil, simulated throttling), el 8 de octubre de 2026:
+
+| Categoría | Puntuación |
+| --- | --- |
+| Rendimiento | 99 |
+| Accesibilidad | 100 |
+| Buenas prácticas | 100 |
+| SEO | 100 |
+
+Métricas: FCP 1,3 s · LCP 2,1 s · TBT 80 ms · CLS 0 · TTI 2,1 s · peso total 192 KB.
+
+La primera corrida previa a los ajustes arrojó 41,9 % de texto legible, 37 KiB de imagen sobredimensionada y `framer-motion` en el bundle sin animaciones que lo usaran. Los cambios fueron: tipografías mínimas de 12 px, un avatar de 240 px en lugar de 640 px, fondo recompresado de 208 KB a 108 KB, eliminación de `framer-motion` y precarga del fondo del encabezado.
+
+Estas cifras son de una compilación local, no del sitio desplegado, y varían entre corridas según la carga de la máquina. Deben volver a medirse sobre https://portfolio-nahum.netlify.app antes de citarlas.
+
+## Estructura
+
+```text
+src/
+  components/    Interfaces de bienvenida, escritorio, móvil y contenido compartido
+  context/       Preferencia de tema
+  data/          Contenido del portafolio
+  test/          Pruebas y configuración
+public/
+  images/        Fotografía, fondo y capturas de proyectos
+  certificados/  Certificados PDF
+  cv/            Currículum
+  video/         Fondo animado opcional
+  robots.txt     Reglas de rastreo
+  sitemap.xml    Mapa del sitio
+  favicon.svg    Identidad visual del portafolio
 ```
-http://localhost:5173
-```
 
-## 🚀 Scripts Disponibles
+## Publicación
 
-```bash
-npm run dev      # Inicia servidor de desarrollo
-npm run build    # Genera build de producción
-npm run preview  # Preview del build de producción
-npm run lint     # Ejecuta linter
-npm test         # Ejecuta tests unitarios
-```
+`netlify.toml` contiene la configuración de Netlify. Genera `dist/` con `npm run build` antes de publicar. Los cambios locales no actualizan el sitio público hasta que se despliegan.
 
-## 📂 Estructura del Proyecto
-
-```
-portfolio-nahum/
-├── public/
-│   ├── images/          # Imágenes estáticas
-│   │   ├── nahum.jpeg
-│   │   └── fondo-inicio.jpg
-│   └── video/           # Videos de fondo
-│       └── fondo-escritorio.mp4
-├── src/
-│   ├── components/      # Componentes React
-│   │   ├── Login.jsx
-│   │   ├── Desktop.jsx
-│   │   ├── Window.jsx
-│   │   ├── Taskbar.jsx
-│   │   ├── PhotoAvatar.jsx
-│   │   └── WindowContent.jsx
-│   ├── App.jsx          # Componente principal
-│   ├── main.jsx         # Punto de entrada
-│   └── index.css        # Estilos globales
-├── package.json
-├── vite.config.js
-└── README.md
-```
-
-## 🎨 Características Técnicas
-
-### Sistema de Ventanas
-- **Drag & Drop**: Ventanas arrastrables con límites de pantalla
-- **Minimizar/Cerrar**: Control completo de estado de ventanas
-- **Z-Index Management**: Sistema de foco automático
-- **Persistencia de posición**: Las ventanas recuerdan su ubicación
-
-### Animaciones
-- **Login Screen**: Entrada secuencial de elementos con delays
-- **Letras interactivas**: Texto que reacciona al hover con efectos 3D
-- **Transiciones suaves**: Entre estados y componentes
-- **Rotación continua**: Logo animado con gradientes neón
-
-### Optimizaciones
-- **Code Splitting**: Carga optimizada de componentes
-- **Lazy Loading**: Imágenes y recursos bajo demanda
-- **CSS Optimizado**: Uso de transformaciones GPU
-- **Video sin controles**: Fondo de video imperceptible para el usuario
-
-## 📊 Performance Metrics
-
-### Lighthouse Scores
-- 🟢 **Performance**: 95+
-- 🟢 **Accessibility**: 90+
-- 🟢 **Best Practices**: 100
-- 🟢 **SEO**: 90+
-
-### Optimizaciones Aplicadas
-- ✅ Minificación de assets
-- ✅ Compresión de imágenes
-- ✅ Lazy loading de componentes
-- ✅ Cache de recursos estáticos
-
-## 🌐 Deployment
-
-El proyecto está desplegado en **Netlify** con continuous deployment desde GitHub.
-
-### Build de Producción
-```bash
-npm run build
-```
-
-Los archivos generados estarán en la carpeta `dist/`
-
-## 👨‍💻 Sobre el Desarrollador
-
-**Nahum Emmanuel Gutiérrez González**
-- 📍 Guadalajara, Jalisco, México
-- 💼 Desarrollador Frontend Jr
-- 🚀 Especializado en React y tecnologías modernas
-
-### Contacto
-- 📧 Email: nahumg2996@gmail.com / codexmx.dev@gmail.com
-- 🐙 GitHub: [@nahum29](https://github.com/nahum29)
-- 💼 LinkedIn: [Nahum Emmanuel](https://www.linkedin.com/in/nahum-emmanuel-guti%C3%A9rrez-gonz%C3%A1lez-376741346/)
-- 💬 WhatsApp: +52 334 374 9886
-
-## 📝 Proyectos Destacados
-
-1. **Funeraria Hermosa Provincia** - Sitio corporativo profesional
-2. **ALAIA Mi Bienestar** - Plataforma de cursos online
-3. **Separador CMYK** - Herramienta para diseño gráfico
-4. **GuitarLA** - E-commerce de instrumentos musicales
-
-[Ver todos los proyectos →](https://portfolio-nahum.netlify.app)
-
-## 🤝 Contribuciones
-
-Si encuentras algún bug o tienes sugerencias de mejora:
-
-1. Fork el proyecto
-2. Crea una rama (`git checkout -b feature/mejora`)
-3. Commit tus cambios (`git commit -m 'Agregar mejora'`)
-4. Push a la rama (`git push origin feature/mejora`)
-5. Abre un Pull Request
-
-## 📄 Licencia
-
-Este proyecto es de código abierto bajo la licencia MIT.
-
-## 🙏 Agradecimientos
-
-- Inspiración de diseño: [dustinbrett.com](https://dustinbrett.com)
-- Animaciones: Framer Motion
-- Iconografía: SVG personalizado
-
----
-
-⭐ Si te gusta este proyecto, considera darle una estrella en GitHub
-
-**Desarrollado con ❤️ por Nahum Emmanuel**
+Sitio: https://portfolio-nahum.netlify.app
+GitHub: https://github.com/nahum29

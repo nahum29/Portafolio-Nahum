@@ -1,0 +1,57 @@
+// `image` guarda la captura real (bytes) de cada proyecto: sin ella no hay reserva
+// de espacio, así que `WindowContent` cae a la portada de texto del proyecto.
+export const projects = [
+  { id: 'funeraria', title: 'Funeraria Hermosa Provincia', category: 'Sitio corporativo', icon: '🏢',
+    problem: 'Presentar servicios funerarios y facilitar el contacto con las familias.',
+    solution: 'Sitio con información de servicios, galería y contacto disponible las 24 horas.',
+    result: 'Los visitantes pueden consultar los servicios y encontrar cómo contactar al negocio.',
+    tags: ['React', 'Responsive', 'SEO'], url: 'https://www.funerariahermosaprovincia.com/' },
+  { id: 'alaia', title: 'ALAIA Mi Bienestar', category: 'Plataforma de cursos', icon: '🧘',
+    problem: 'Ofrecer cursos de bienestar emocional en una plataforma digital.',
+    solution: 'Plataforma en WordPress con usuarios, contenido multimedia y pagos integrados.',
+    result: 'Una experiencia que reúne el acceso a cursos y la compra en línea.',
+    tags: ['WordPress', 'E-learning', 'Pagos'], url: 'https://alaiamibienestar.com/',
+    image: { src: '/images/projects/alaia.jpg', width: 1521, height: 667 } },
+  { id: 'boda', title: 'Invitación de boda', category: 'Experiencia interactiva', icon: '💒',
+    problem: 'Compartir los detalles de una boda con una invitación personalizada.',
+    solution: 'Invitación digital con diseño a medida y animaciones.',
+    result: 'Una invitación accesible desde el navegador y fácil de compartir con los invitados.',
+    tags: ['HTML/CSS', 'JavaScript', 'Animaciones'], url: 'https://bodamisaelylibni.netlify.app/',
+    image: { src: '/images/projects/boda.jpg', width: 1536, height: 674 } },
+  { id: 'cmyk', title: 'Separador de colores CMYK', category: 'Herramienta web', icon: '🎨',
+    problem: 'Separar los canales de color de una imagen para preparar trabajos de impresión.',
+    solution: 'Procesamiento de píxeles con Canvas y exportación de separaciones.',
+    result: 'Separación de canales CMYK desde una herramienta en el navegador.',
+    tags: ['JavaScript', 'Canvas API', 'PDF'], url: 'https://separador-de-color-nahum.netlify.app/',
+    image: { src: '/images/projects/cmyk.jpg', width: 1536, height: 674 } },
+  { id: 'guitarla', title: 'GuitarLA', category: 'E-commerce', icon: '🎸',
+    problem: 'Organizar un catálogo de guitarras y la selección de productos.',
+    solution: 'Tienda en React con catálogo, carrito de compras y diseño adaptable.',
+    result: 'Los visitantes pueden explorar instrumentos y gestionar su carrito.',
+    tags: ['React', 'Carrito de compras', 'Responsive'], url: 'https://ngguitarla.netlify.app/',
+    image: { src: '/images/projects/guitarla.jpg', width: 1521, height: 667 } },
+  { id: 'festival', title: 'Festival de Música', category: 'Landing page', icon: '🎵',
+    problem: 'Reunir la información de un festival de música en una sola página.',
+    solution: 'Landing con artistas, galería e información de boletos.',
+    result: 'Programa e información del evento organizados en una experiencia adaptable.',
+    tags: ['HTML/CSS', 'SASS', 'JavaScript'], url: 'https://festival-de-musicaa.netlify.app/',
+    image: { src: '/images/projects/festival.jpg', width: 1521, height: 667 } },
+]
+export const skills = [
+  { title: 'Frontend', items: ['React', 'JavaScript', 'TypeScript', 'HTML/CSS', 'SASS', 'Next.js', 'Vite'] },
+  { title: 'Backend y CMS', items: ['Node.js', 'WordPress', 'REST APIs'] },
+  { title: 'Bases de datos', items: ['MongoDB', 'Firebase', 'Supabase'] },
+  { title: 'Herramientas y diseño', items: ['Git', 'Figma', 'Canvas API', 'Netlify'] },
+]
+export const certificates = [
+  ['Desarrollador Front-end', 'Desarrollador-Front-end.pdf'],
+  ['Introducción a la Programación', 'Introduccion-a-la-programacion.pdf'],
+  ['Liderazgo', 'Liderazgo.pdf'], ['Curador de Datos', 'Curador-de-datos.pdf'], ['Finder', 'Finder.pdf'],
+]
+export const contacts = [
+  { label: 'Email profesional', text: 'codexmx.dev@gmail.com', url: 'mailto:codexmx.dev@gmail.com', icon: '✉' },
+  { label: 'Email personal', text: 'nahumg2996@gmail.com', url: 'mailto:nahumg2996@gmail.com', icon: '✉' },
+  { label: 'GitHub', text: '@nahum29', url: 'https://github.com/nahum29', icon: '⌘' },
+  { label: 'LinkedIn', text: 'Nahum Emmanuel', url: 'https://www.linkedin.com/in/nahum-emmanuel-guti%C3%A9rrez-gonz%C3%A1lez-376741346/', icon: 'in' },
+  { label: 'WhatsApp', text: '+52 334 374 9886', url: 'https://wa.me/523343749886', icon: '↗' },
+]

@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- SEO Meta Tags -->
@@ -16,16 +16,46 @@
     <meta property="og:description" content="Portfolio interactivo con proyectos reales y experiencia en desarrollo web" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://portfolio-nahum.netlify.app" />
-    <meta property="og:image" content="/images/nahum.jpeg" />
+    <meta property="og:image" content="https://portfolio-nahum.netlify.app/images/nahum.jpeg" />
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Nahum Gutiérrez - Desarrollador Frontend Jr" />
     <meta name="twitter:description" content="Portfolio interactivo con proyectos reales y experiencia en desarrollo web" />
-    <meta name="twitter:image" content="/images/nahum.jpeg" />
+    <meta name="twitter:image" content="https://portfolio-nahum.netlify.app/images/nahum.jpeg" />
     
     <!-- Theme Color -->
-    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="theme-color" content="#0c1220" />
+
+    <!-- Precarga del fondo del encabezado, elemento LCP en ambas interfaces -->
+    <link rel="preload" as="image" href="/images/fondo-inicio.jpg" fetchpriority="high" />
+
+    <!-- Datos estructurados: perfil profesional (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Nahum Emmanuel Gutiérrez González",
+      "alternateName": "Nahum Gutiérrez",
+      "jobTitle": "Desarrollador Frontend Jr",
+      "email": "mailto:codexmx.dev@gmail.com",
+      "telephone": "+52-334-374-9886",
+      "url": "https://portfolio-nahum.netlify.app",
+      "image": "https://portfolio-nahum.netlify.app/images/nahum.jpeg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Guadalajara",
+        "addressRegion": "Jalisco",
+        "addressCountry": "MX"
+      },
+      "sameAs": [
+        "https://github.com/nahum29",
+        "https://www.linkedin.com/in/nahum-emmanuel-guti%C3%A9rrez-gonz%C3%A1lez-376741346/"
+      ],
+      "knowsAbout": ["React", "JavaScript", "TypeScript", "HTML/CSS", "SASS", "Next.js", "Vite", "WordPress", "Node.js"],
+      "worksFor": { "@type": "Organization", "name": "Freelance" }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

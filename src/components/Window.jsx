@@ -1,56 +1,38 @@
-import { useState, useRef } from 'react'
-import { motion } from 'framer-motion'
+import { useRef } from 'react'
 import WindowContent from './WindowContent'
 import './Window.css'
 
-function Window({ id, title, content, x, y, width, height, isActive, onClose, onMinimize, onFocus, onPositionChange }) {
-  const [isDragging, setIsDragging] = useState(false)
-  const dragRef = useRef(null)
-
+function Window({ id, title, content, x, y, width, height, zIndex, maximized, isActive, onClose, onMinimize, onMaximize, onFocus, onPositionChange }) {
+  const drag = useRef(null)
+  const startDrag = (event) => {
+    if (maximized || event.button !== 0 || event.target.closest('button')) return
+    drag.current = { pointerX: event.clientX, pointerY: event.clientY, x, y }
+    event.currentTarget.setPointerCapture(event.pointerId)
+  }
+  const moveDrag = (event) => {
+    if (!drag.current) return
+    const origin = drag.current
+    onPositionChange(
+      Math.max(8, Math.min(window.innerWidth - width - 8, origin.x + event.clientX - origin.pointerX)),
+      Math.max(8, Math.min(window.innerHeight - height - 76, origin.y + event.clientY - origin.pointerY))
+    )
+  }
   return (
-    <motion.div
-      className={`window ${isActive ? 'active' : ''}`}
-      style={{
-        left: x,
-        top: y,
-        width,
-        height,
-        zIndex: isActive ? 1000 : 1
-      }}
-      drag
-      dragMomentum={false}
-      dragElastic={0}
-      dragConstraints={{
-        left: 0,
-        top: 0,
-        right: window.innerWidth - width,
-        bottom: window.innerHeight - 80 - height
-      }}
-      onDrag={(e, info) => {
-        setIsDragging(true)
-      }}
-      onDragEnd={(e, info) => {
-        setIsDragging(false)
-        onPositionChange(info.point.x, info.point.y)
-      }}
-      onMouseDown={onFocus}
-      initial={{ scale: 0.9, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      exit={{ scale: 0.9, opacity: 0 }}
-    >
-      <div className="window-titlebar">
-        <div className="window-title">{title}</div>
+    <section className={`window ${isActive ? 'active' : ''}`} role="region"
+      aria-labelledby={`window-title-${id}`} style={{ left: x, top: y, width, height, zIndex }}
+      onPointerDown={onFocus} onFocus={onFocus}>
+      <div className="window-titlebar" onPointerDown={startDrag} onPointerMove={moveDrag}
+        onPointerUp={() => { drag.current = null }} onLostPointerCapture={() => { drag.current = null }}
+        onDoubleClick={(event) => { if (!event.target.closest('button')) onMaximize() }}>
+        <div id={`window-title-${id}`} className="window-title">{title}</div>
         <div className="window-controls">
-          <button className="window-button minimize" onClick={onMinimize}>−</button>
-          <button className="window-button maximize">□</button>
-          <button className="window-button close" onClick={onClose}>×</button>
+          <button className="window-button" aria-label={`Minimizar ${title}`} onClick={onMinimize}>−</button>
+          <button className="window-button" aria-label={`${maximized ? 'Restaurar' : 'Maximizar'} ${title}`} onClick={onMaximize}>{maximized ? '❐' : '□'}</button>
+          <button className="window-button close" aria-label={`Cerrar ${title}`} onClick={onClose}>×</button>
         </div>
       </div>
-      <div className="window-content">
-        <WindowContent type={content} />
-      </div>
-    </motion.div>
+      <div className="window-content" tabIndex={0}><WindowContent type={content} /></div>
+    </section>
   )
 }
-
 export default Window
