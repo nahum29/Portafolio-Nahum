@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://portfolio-nahum.netlify.app/sitemap.xml
+Sitemap: https://portafolio-nahum.netlify.app/sitemap.xml

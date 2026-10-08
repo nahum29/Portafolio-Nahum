@@ -1,11 +1,6 @@
 // `image` guarda la captura real (bytes) de cada proyecto: sin ella no hay reserva
 // de espacio, así que `WindowContent` cae a la portada de texto del proyecto.
 export const projects = [
-  { id: 'funeraria', title: 'Funeraria Hermosa Provincia', category: 'Sitio corporativo', icon: '🏢',
-    problem: 'Presentar servicios funerarios y facilitar el contacto con las familias.',
-    solution: 'Sitio con información de servicios, galería y contacto disponible las 24 horas.',
-    result: 'Los visitantes pueden consultar los servicios y encontrar cómo contactar al negocio.',
-    tags: ['React', 'Responsive', 'SEO'], url: 'https://www.funerariahermosaprovincia.com/' },
   { id: 'alaia', title: 'ALAIA Mi Bienestar', category: 'Plataforma de cursos', icon: '🧘',
     problem: 'Ofrecer cursos de bienestar emocional en una plataforma digital.',
     solution: 'Plataforma en WordPress con usuarios, contenido multimedia y pagos integrados.',
@@ -49,9 +44,9 @@ export const certificates = [
   ['Liderazgo', 'Liderazgo.pdf'], ['Curador de Datos', 'Curador-de-datos.pdf'], ['Finder', 'Finder.pdf'],
 ]
 export const contacts = [
-  { label: 'Email profesional', text: 'codexmx.dev@gmail.com', url: 'mailto:codexmx.dev@gmail.com', icon: '✉' },
-  { label: 'Email personal', text: 'nahumg2996@gmail.com', url: 'mailto:nahumg2996@gmail.com', icon: '✉' },
+  { label: 'Correo personal', text: 'nahumg2996@gmail.com', url: 'mailto:nahumg2996@gmail.com', icon: '✉' },
+  { label: 'Correo Codex MX', text: 'codexmx.dev@gmail.com', url: 'mailto:codexmx.dev@gmail.com', icon: '✉' },
   { label: 'GitHub', text: '@nahum29', url: 'https://github.com/nahum29', icon: '⌘' },
   { label: 'LinkedIn', text: 'Nahum Emmanuel', url: 'https://www.linkedin.com/in/nahum-emmanuel-guti%C3%A9rrez-gonz%C3%A1lez-376741346/', icon: 'in' },
-  { label: 'WhatsApp', text: '+52 334 374 9886', url: 'https://wa.me/523343749886', icon: '↗' },
+  { label: 'WhatsApp', text: '+52 322 330 6890', url: 'https://wa.me/523223306890', icon: '↗' },
 ]

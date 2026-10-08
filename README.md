@@ -1,6 +1,6 @@
 # Portafolio de Nahum Emmanuel Gutiérrez González
 
-Portafolio personal con escritorio inspirado en Windows y navegación móvil inspirada en Android. Incluye seis proyectos desarrollados íntegramente por Nahum, habilidades, certificados y CV.
+Portafolio personal con escritorio inspirado en Windows y navegación móvil inspirada en Android. Incluye cinco proyectos desarrollados íntegramente por Nahum, habilidades, certificados y CV.
 
 ## Desarrollo local
 
@@ -44,9 +44,9 @@ React 19, Vite 5 y CSS. Las versiones exactas reproducibles están en `package-l
 Los proyectos, habilidades, contactos y certificados se editan en `src/data/portfolio.js`.
 Ambas interfaces renderizan `WindowContent.jsx`; no mantienen listas separadas.
 
-Las capturas de cinco proyectos se guardan en `public/images/projects/` en formato JPEG, con sus dimensiones reales declaradas en `src/data/portfolio.js` para reservar el espacio antes de cargarlas. Se obtuvieron de sus sitios públicos el 29 de septiembre de 2026. Su tamaño total es inferior a 300 KB y se cargan de forma diferida.
+Las cinco capturas se guardan en `public/images/projects/` en formato JPEG, con sus dimensiones reales declaradas en `src/data/portfolio.js` para reservar el espacio antes de cargarlas. Se obtuvieron de sus sitios públicos el 29 de septiembre de 2026. Su tamaño total es inferior a 300 KB y se cargan de forma diferida.
 
-El dominio de Funeraria Hermosa Provincia no resolvió durante la revisión. Su ficha conserva el enlace original y utiliza una portada de texto e icono, no una captura inventada. Cuando el sitio esté disponible, añade su captura y actualiza la ficha.
+El proyecto de Funeraria Hermosa Provincia se retiró del portafolio en octubre de 2026 porque su dominio venció y el sitio dejó de estar en línea.
 
 Las descripciones reflejan las funcionalidades del portafolio original y la autoría confirmada por Nahum. No se afirman mejoras de ventas, tráfico o rendimiento sin medición.
 
@@ -57,7 +57,7 @@ Las descripciones reflejan las funcionalidades del portafolio original y la auto
 
 ## Verificación
 
-La suite incluye regresiones para restaurar ventanas minimizadas, gestionar la ventana activa al cerrar, maximizar/restaurar, abrir secciones con teclado, cargar el video bajo demanda y acceder a los seis proyectos en móvil.
+La suite incluye regresiones para restaurar ventanas minimizadas, gestionar la ventana activa al cerrar, maximizar/restaurar, abrir secciones con teclado, cargar el video bajo demanda y acceder a los cinco proyectos en móvil.
 
 ### Lighthouse
 
@@ -74,7 +74,7 @@ Métricas: FCP 1,3 s · LCP 2,1 s · TBT 80 ms · CLS 0 · TTI 2,1 s · peso tot
 
 La primera corrida previa a los ajustes arrojó 41,9 % de texto legible, 37 KiB de imagen sobredimensionada y `framer-motion` en el bundle sin animaciones que lo usaran. Los cambios fueron: tipografías mínimas de 12 px, un avatar de 240 px en lugar de 640 px, fondo recompresado de 208 KB a 108 KB, eliminación de `framer-motion` y precarga del fondo del encabezado.
 
-Estas cifras son de una compilación local, no del sitio desplegado, y varían entre corridas según la carga de la máquina. Deben volver a medirse sobre https://portfolio-nahum.netlify.app antes de citarlas.
+Estas cifras son de una compilación local, no del sitio desplegado, y varían entre corridas según la carga de la máquina. Deben volver a medirse sobre https://portafolio-nahum.netlify.app antes de citarlas.
 
 ## Estructura
 
@@ -98,5 +98,5 @@ public/
 
 `netlify.toml` contiene la configuración de Netlify. Genera `dist/` con `npm run build` antes de publicar. Los cambios locales no actualizan el sitio público hasta que se despliegan.
 
-Sitio: https://portfolio-nahum.netlify.app
+Sitio: https://portafolio-nahum.netlify.app
 GitHub: https://github.com/nahum29

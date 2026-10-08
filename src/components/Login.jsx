@@ -20,14 +20,14 @@ function Login({ onLogin }) {
         <span className="availability"><span aria-hidden="true" />Disponible para nuevos proyectos</span>
         <p className="login-eyebrow">HOLA, SOY NAHUM EMMANUEL</p>
         <h1>Diseño y código.<br /><span>Ideas hechas realidad.</span></h1>
-        <p className="login-description">Desarrollador Frontend Jr en Guadalajara.<br />Creo experiencias web con React, atención al detalle y propósito.</p>
+        <p className="login-description">Desarrollador Frontend Jr en Tonalá, Jalisco.<br />Creo experiencias web con React, atención al detalle y propósito.</p>
         <div className="welcome-actions">
           <button className="primary-action" onClick={() => onLogin(null)}>Explorar portafolio <span aria-hidden="true">→</span></button>
           <button className="secondary-action" onClick={() => onLogin('projects')}>Ver proyectos ↗</button>
         </div>
         <a className="login-cv" href="/cv/CV-Nahum-Gutierrez.pdf" download>Descargar mi CV ↓</a>
       </section>
-      <footer className="login-footer"><span>Guadalajara, México</span><time dateTime={time.toISOString()}>{time.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' })}</time></footer>
+      <footer className="login-footer"><span>Tonalá, Jalisco</span><time dateTime={time.toISOString()}>{time.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' })}</time></footer>
     </main>
   )
 }

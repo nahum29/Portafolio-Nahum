@@ -36,10 +36,10 @@ function WindowContent({ type }) {
   if (type === 'about') return <section className="content-section">
     <span className="section-eyebrow">UN POCO SOBRE MÍ</span><h2>Hola, soy Nahum.</h2>
     <div className="about-intro"><img src="/images/nahum-perfil.jpg" alt="Nahum Emmanuel" width="88" height="88" />
-      <p>Desarrollador Frontend Jr en Guadalajara. Transformo ideas en sitios y herramientas web, con experiencia en proyectos freelance para clientes reales.</p></div>
+      <p>Desarrollador Frontend Jr en Tonalá, Jalisco. Transformo ideas en sitios y herramientas web, con experiencia en proyectos freelance para clientes reales.</p></div>
     <p>Trabajo con React, JavaScript y tecnologías web modernas. Me interesa resolver problemas concretos, cuidar la experiencia de quien usa mis proyectos y seguir aprendiendo en cada entrega.</p>
     <div className="info-grid">
-      {[['Ubicación', 'Guadalajara, Jalisco, México'], ['Rol', 'Desarrollador Frontend Jr'], ['Disponibilidad', 'Disponible inmediatamente'], ['Idiomas', 'Español nativo · Inglés básico']].map(([label, value]) =>
+      {[['Ubicación', 'Tonalá, Jalisco, México'], ['Rol', 'Desarrollador Frontend Jr'], ['Disponibilidad', 'Disponible inmediatamente'], ['Idiomas', 'Español nativo · Inglés básico']].map(([label, value]) =>
         <div className="info-item" key={label}><span className="info-label">{label}</span><span className="info-value">{value}</span></div>)}
     </div>
     <a href="/cv/CV-Nahum-Gutierrez.pdf" download className="cv-download-button">Descargar CV ↓</a>

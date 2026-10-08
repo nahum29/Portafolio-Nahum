@@ -65,7 +65,7 @@ function Desktop({ initialSection = null }) {
       <section className="desktop-welcome" aria-label="Bienvenida" hidden={windows.some(item => !item.minimized)}>
         <span className="eyebrow">EL ESPACIO DE NAHUM</span>
         <h1>Ideas que cobran<br />vida en la web.</h1>
-        <p>Desarrollador Frontend Jr · Guadalajara, México</p>
+        <p>Desarrollador Frontend Jr · Tonalá, Jalisco</p>
         <div className="welcome-actions">
           <button className="primary-action" onClick={() => openWindow(desktopIcons[1])}>Explorar proyectos <span aria-hidden="true">↗</span></button>
           <a className="secondary-action" href="/cv/CV-Nahum-Gutierrez.pdf" download>Descargar CV ↓</a>

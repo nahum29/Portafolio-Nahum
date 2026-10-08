@@ -36,7 +36,7 @@ function MobileOS() {
         <img className="mobile-avatar" src="/images/nahum-perfil.jpg" alt="Nahum Emmanuel" width="88" height="88" />
         <p className="mobile-eyebrow">DISEÑO + DESARROLLO</p><h1>Nahum Emmanuel</h1>
         <p>Desarrollador Frontend Jr</p>
-        <span className="mobile-location">Guadalajara, México</span>
+        <span className="mobile-location">Tonalá, Jalisco</span>
         <div className="mobile-actions"><button className="primary-action" data-focus-key="hero-projects" onClick={() => open('projects')}>Ver proyectos ↗</button><a href="/cv/CV-Nahum-Gutierrez.pdf" download className="secondary-action">CV ↓</a></div>
       </div>
       <div className="mobile-apps-section"><p className="apps-label">EXPLORA MI ESPACIO</p>
