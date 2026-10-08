@@ -4,6 +4,7 @@ import WindowContent from './WindowContent'
 import './MobileOS.css'
 const apps = [
   { id: 'about', name: 'Sobre mí', icon: '👨‍💻', color: '#527cc2' },
+  { id: 'experience', name: 'Experiencia', icon: '💼', color: '#4f7f6d' },
   { id: 'projects', name: 'Proyectos', icon: '📁', color: '#408674' },
   { id: 'skills', name: 'Habilidades', icon: '⚡', color: '#a17a36' },
   { id: 'contact', name: 'Contacto', icon: '📧', color: '#9d5964' },

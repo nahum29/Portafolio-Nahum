@@ -31,7 +31,40 @@ export const projects = [
     result: 'Programa e información del evento organizados en una experiencia adaptable.',
     tags: ['HTML/CSS', 'SASS', 'JavaScript'], url: 'https://festival-de-musicaa.netlify.app/',
     image: { src: '/images/projects/festival.jpg', width: 1521, height: 667 } },
+  { id: 'tiendita', title: 'Tiendita C.P.S', category: 'Sistema de punto de venta', icon: '🛒',
+    problem: 'Apoyar la operación diaria de una tienda: ventas, inventario y créditos de clientes en un solo lugar.',
+    solution: 'Aplicación en Next.js y TypeScript con panel, punto de venta, inventario y clientes conectados a Supabase.',
+    result: 'Registro de ventas, control de inventario y seguimiento de créditos desde una interfaz en español.',
+    tags: ['Next.js', 'TypeScript', 'Supabase'],
+    repo: 'https://github.com/nahum29/TienditaC.P.S' },
 ]
+// Experiencia y formación: la misma información que el CV. Si cambias una fecha,
+// cambia también `public/resume.json` y `public/cv/CV-Nahum-Gutierrez.pdf`.
+export const experience = [
+  { role: 'Desarrollador web independiente', org: 'ALAIA · Plataforma de cursos', period: '2024 – presente',
+    type: 'Freelance', icon: '💼',
+    highlights: [
+      'Desarrollo con WordPress y Elementor Pro.',
+      'Configuración de formularios, acceso de usuarios y pasarela de pagos.',
+      'Configuración de alojamiento, dominio y licencias; orientación al cliente para administrar el sitio.',
+    ] },
+  { role: 'Soporte técnico de impresión', org: 'Grupo Rizo', period: '2023', type: 'Tiempo completo', icon: '🖥️',
+    highlights: [
+      'Configuración de impresoras empresariales por IP y de computadoras para acceder a ellas en red.',
+      'Diagnóstico y solución de problemas de conexión e impresión en hoteles, notarías y oficinas gubernamentales.',
+    ] },
+]
+export const education = [
+  { title: 'Desarrollador Front-end', org: 'Fundación Carlos Slim', detail: '96 horas', period: '2025' },
+  { title: 'Introducción a la Programación', org: 'Fundación Carlos Slim', detail: '28 horas', period: '2025' },
+  { title: 'Secundaria', org: 'Escolaridad', detail: '', period: '' },
+]
+// Enlaces de código verificados con la API de GitHub el 8 de octubre de 2026.
+// Solo `tiendita` añade `repo`: los demás proyectos no tienen repositorio público,
+// así que no se publica ningún enlace que devuelva 404.
+export const codeLinks = {
+  portfolio: 'https://github.com/nahum29/Portafolio-Nahum',
+}
 export const skills = [
   { title: 'Frontend', items: ['React', 'JavaScript', 'TypeScript', 'HTML/CSS', 'SASS', 'Next.js', 'Vite'] },
   { title: 'Backend y CMS', items: ['Node.js', 'WordPress', 'REST APIs'] },

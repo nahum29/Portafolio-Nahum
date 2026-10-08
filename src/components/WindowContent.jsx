@@ -1,4 +1,4 @@
-import { projects, skills, certificates, contacts } from '../data/portfolio'
+import { projects, skills, certificates, contacts, experience, education } from '../data/portfolio'
 import './WindowContent.css'
 
 function Certificates() {
@@ -29,7 +29,10 @@ function WindowContent({ type }) {
           <details className="project-details"><summary>Mi trabajo y resultado</summary>
             <dl><dt>Mi aportación</dt><dd>Desarrollo completo. {project.solution}</dd><dt>Resultado</dt><dd>{project.result}</dd></dl>
           </details>
-          <a className="project-link" href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Visitar ${project.title} (nueva pestaña)`}>Visitar proyecto <span aria-hidden="true">↗</span></a>
+          <div className="project-links">
+            {project.url && <a className="project-link" href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Visitar ${project.title} (nueva pestaña)`}>Visitar proyecto <span aria-hidden="true">↗</span></a>}
+            {project.repo && <a className="project-link" href={project.repo} target="_blank" rel="noopener noreferrer" aria-label={`Ver el código de ${project.title} en GitHub (nueva pestaña)`}>Ver código fuente <span aria-hidden="true">↗</span></a>}
+          </div>
         </div>
       </article>)}</div>
   </section>
@@ -39,10 +42,39 @@ function WindowContent({ type }) {
       <p>Desarrollador Frontend Jr en Tonalá, Jalisco. Transformo ideas en sitios y herramientas web, con experiencia en proyectos freelance para clientes reales.</p></div>
     <p>Trabajo con React, JavaScript y tecnologías web modernas. Me interesa resolver problemas concretos, cuidar la experiencia de quien usa mis proyectos y seguir aprendiendo en cada entrega.</p>
     <div className="info-grid">
-      {[['Ubicación', 'Tonalá, Jalisco, México'], ['Rol', 'Desarrollador Frontend Jr'], ['Disponibilidad', 'Disponible inmediatamente'], ['Idiomas', 'Español nativo · Inglés básico']].map(([label, value]) =>
+      {[['Ubicación', 'Tonalá, Jalisco, México'], ['Rol', 'Desarrollador Frontend Jr'], ['Disponibilidad', 'En búsqueda de oportunidades junior · Remoto o Tonalá'], ['Idiomas', 'Español nativo · Inglés básico']].map(([label, value]) =>
         <div className="info-item" key={label}><span className="info-label">{label}</span><span className="info-value">{value}</span></div>)}
     </div>
     <a href="/cv/CV-Nahum-Gutierrez.pdf" download className="cv-download-button">Descargar CV ↓</a>
+  </section>
+  if (type === 'experience') return <section className="content-section">
+    <span className="section-eyebrow">TRAYECTORIA</span>
+    <h2>Experiencia y formación</h2>
+    <p>Lo que he construido para clientes y lo que he estudiado para hacerlo.</p>
+    <h3 className="subsection-title">Experiencia</h3>
+    <div className="timeline">{experience.map(item => (
+      <article className="timeline-item" key={`${item.role}-${item.period}`}>
+        <span className="timeline-marker" aria-hidden="true">{item.icon}</span>
+        <div className="timeline-body">
+          <div className="timeline-head">
+            <h4>{item.role}</h4>
+            <span className="timeline-period">{item.period}</span>
+          </div>
+          <p className="timeline-org">{item.org} · {item.type}</p>
+          <ul>{item.highlights.map(highlight => <li key={highlight}>{highlight}</li>)}</ul>
+        </div>
+      </article>
+    ))}</div>
+    <h3 className="subsection-title">Formación</h3>
+    <div className="education-list">{education.map(item => (
+      <div className="education-row" key={item.title}>
+        <span className="education-what"><strong>{item.title}</strong>
+          <small>{[item.org, item.detail].filter(Boolean).join(' · ')}</small></span>
+        <span className="timeline-period">{item.period}</span>
+      </div>
+    ))}</div>
+    <a className="cv-download-button" href="/resume.json" download>Descargar mis datos (JSON Resume) ↓</a>
+    <p className="section-note">El mismo contenido del CV en el estándar <a href="https://jsonresume.org/" target="_blank" rel="noopener noreferrer">JSON Resume</a>, pensado para los sistemas de reclutamiento.</p>
   </section>
   if (type === 'skills') return <section className="content-section">
     <span className="section-eyebrow">MI CAJA DE HERRAMIENTAS</span><h2>Habilidades</h2>
@@ -50,7 +82,7 @@ function WindowContent({ type }) {
     <div className="skills-container">{skills.map(group => <div className="skill-category" key={group.title}>
       <h3>{group.title}</h3><div className="skill-list">{group.items.map(item => <span className="skill-badge" key={item}>{item}</span>)}</div>
     </div>)}</div>
-    <div className="certificates-section"><h3>Formación y certificados</h3><Certificates /></div>
+    <div className="certificates-section"><h3>Certificados</h3><Certificates /></div>
   </section>
   if (type === 'certificates') return <section className="content-section">
     <span className="section-eyebrow">APRENDIZAJE CONTINUO</span><h2>Certificados</h2><Certificates />

@@ -1,0 +1,131 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Nahum Emmanuel Gutiérrez González",
+    "label": "Desarrollador web junior",
+    "image": "https://portafolio-nahum.netlify.app/images/nahum-perfil.jpg",
+    "email": "nahumg2996@gmail.com",
+    "telephone": "+52 322 330 6890",
+    "url": "https://portafolio-nahum.netlify.app",
+    "summary": "Desarrollador web autodidacta con un sitio entregado a un cliente y varios proyectos publicados en producción. Trabajo principalmente con React, HTML, CSS y JavaScript. Busco una oportunidad junior para contribuir al desarrollo y mantenimiento de sitios y aplicaciones web. Disponibilidad: en búsqueda de oportunidades junior, en modalidad remoto o presencial en Tonalá, Jalisco.",
+    "location": {
+      "city": "Tonalá",
+      "region": "Jalisco",
+      "countryCode": "MX",
+      "country": "México"
+    },
+    "profiles": [
+      { "network": "GitHub", "username": "nahum29", "url": "https://github.com/nahum29" },
+      { "network": "LinkedIn", "username": "nahum-emmanuel-gutiérrez-gonzález", "url": "https://www.linkedin.com/in/nahum-emmanuel-guti%C3%A9rrez-gonz%C3%A1lez-376741346/" },
+      { "network": "WhatsApp", "username": "322 330 6890", "url": "https://wa.me/523223306890" }
+    ]
+  },
+  "work": [
+    {
+      "name": "Independiente",
+      "position": "Desarrollador web independiente",
+      "url": "https://alaiamibienestar.com/",
+      "startDate": "2024",
+      "summary": "Desarrollo y mantenimiento de la plataforma de cursos de ALAIA.",
+      "highlights": [
+        "Desarrollo con WordPress y Elementor Pro.",
+        "Configuración de formularios, acceso de usuarios y pasarela de pagos.",
+        "Configuración de alojamiento, dominio y licencias; orientación al cliente para administrar el sitio."
+      ]
+    },
+    {
+      "name": "Grupo Rizo",
+      "position": "Soporte técnico de impresión",
+      "startDate": "2023",
+      "endDate": "2023",
+      "summary": "Soporte técnico de infraestructura de impresión.",
+      "highlights": [
+        "Configuración de impresoras empresariales por IP y de computadoras para acceder a ellas en red.",
+        "Diagnóstico y solución de problemas de conexión e impresión en hoteles, notarías y oficinas gubernamentales."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Fundación Carlos Slim",
+      "studyType": "Curso",
+      "area": "Desarrollador Front-end",
+      "startDate": "2025",
+      "endDate": "2025",
+      "score": "96 horas"
+    },
+    {
+      "institution": "Fundación Carlos Slim",
+      "studyType": "Curso",
+      "area": "Introducción a la Programación",
+      "startDate": "2025",
+      "endDate": "2025",
+      "score": "28 horas"
+    },
+    {
+      "institution": "Escolaridad",
+      "area": "Secundaria"
+    }
+  ],
+  "skills": [
+    { "name": "Frontend", "keywords": ["React", "JavaScript", "TypeScript", "HTML/CSS", "SASS", "Next.js", "Vite"] },
+    { "name": "Backend y CMS", "keywords": ["Node.js", "WordPress", "REST APIs"] },
+    { "name": "Bases de datos", "keywords": ["MongoDB", "Firebase", "Supabase"] },
+    { "name": "Herramientas y diseño", "keywords": ["Git", "Figma", "Canvas API", "Netlify"] }
+  ],
+  "languages": [
+    { "language": "Español", "fluency": "Nativo" },
+    { "language": "Inglés", "fluency": "Básico" }
+  ],
+  "certificates": [
+    { "name": "Desarrollador Front-end", "date": "2025", "issuer": "Fundación Carlos Slim", "url": "https://portafolio-nahum.netlify.app/certificados/Desarrollador-Front-end.pdf" },
+    { "name": "Introducción a la Programación", "date": "2025", "issuer": "Fundación Carlos Slim", "url": "https://portafolio-nahum.netlify.app/certificados/Introduccion-a-la-programacion.pdf" },
+    { "name": "Liderazgo", "date": "2024", "issuer": "Fundación Carlos Slim", "url": "https://portafolio-nahum.netlify.app/certificados/Liderazgo.pdf" },
+    { "name": "Curador de Datos", "date": "2021", "issuer": "Fundación Carlos Slim", "url": "https://portafolio-nahum.netlify.app/certificados/Curador-de-datos.pdf" },
+    { "name": "Finder", "date": "2020", "issuer": "Fundación Carlos Slim", "url": "https://portafolio-nahum.netlify.app/certificados/Finder.pdf" }
+  ],
+  "projects": [
+    {
+      "name": "ALAIA Mi Bienestar",
+      "description": "Plataforma de cursos de bienestar emocional en WordPress con usuarios, contenido multimedia y pagos integrados.",
+      "highlights": ["WordPress", "Elementor Pro", "Pasarela de pagos"],
+      "keywords": ["WordPress", "E-learning", "Pagos"],
+      "url": "https://alaiamibienestar.com/"
+    },
+    {
+      "name": "Invitación de boda",
+      "description": "Invitación digital con diseño a medida y animaciones, accesible desde el navegador y fácil de compartir.",
+      "keywords": ["HTML/CSS", "JavaScript", "Animaciones"],
+      "url": "https://bodamisaelylibni.netlify.app/"
+    },
+    {
+      "name": "Separador de colores CMYK",
+      "description": "Herramienta que separa los canales de color de una imagen para preparar trabajos de impresión, con Canvas y exportación de separaciones.",
+      "keywords": ["JavaScript", "Canvas API", "PDF"],
+      "url": "https://separador-de-color-nahum.netlify.app/"
+    },
+    {
+      "name": "GuitarLA",
+      "description": "Tienda en React con catálogo de guitarras, carrito de compras y diseño adaptable.",
+      "keywords": ["React", "Carrito de compras", "Responsive"],
+      "url": "https://ngguitarla.netlify.app/"
+    },
+    {
+      "name": "Festival de Música",
+      "description": "Landing con artistas, galería e información de boletos en una sola página adaptable.",
+      "keywords": ["HTML/CSS", "SASS", "JavaScript"],
+      "url": "https://festival-de-musicaa.netlify.app/"
+    },
+    {
+      "name": "Tiendita C.P.S",
+      "description": "Sistema de punto de venta para pequeñas tiendas: panel de ventas, punto de venta con carrito, inventario, clientes y seguimiento de créditos, con interfaz en español.",
+      "highlights": [
+        "Panel con las ventas del día.",
+        "Punto de venta con efectivo, tarjeta y crédito.",
+        "Inventario, clientes y historial de ventas conectados a Supabase."
+      ],
+      "keywords": ["Next.js", "TypeScript", "Supabase"],
+      "repository": "https://github.com/nahum29/TienditaC.P.S"
+    }
+  ]
+}

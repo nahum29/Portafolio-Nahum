@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useTheme } from '../context/useTheme'
 import './Taskbar.css'
-function Taskbar({ windows, activeWindow, onWindowClick, onHome, motionEnabled, onToggleMotion }) {
+function Taskbar({ windows, activeWindow, onWindowClick, onHome, motionEnabled, onToggleMotion, onOpenPalette }) {
   const { theme, toggleTheme } = useTheme()
   const [currentTime, setCurrentTime] = useState(new Date())
   useEffect(() => {
@@ -17,6 +17,8 @@ function Taskbar({ windows, activeWindow, onWindowClick, onHome, motionEnabled, 
           aria-pressed={activeWindow === item.id} onClick={() => onWindowClick(item.id)}>{item.title}</button>)}
       </div>
       <div className="taskbar-tray">
+        {onOpenPalette && <button className="theme-toggle" onClick={onOpenPalette} title="Paleta de comandos (Ctrl + K)" aria-label="Abrir la paleta de comandos con Control K">
+          <span aria-hidden="true">⌨</span><span className="theme-tooltip">Ctrl K</span></button>}
         {onToggleMotion && <button className="theme-toggle" aria-pressed={motionEnabled} onClick={onToggleMotion}>{motionEnabled ? 'Pausar fondo' : 'Animar fondo'}</button>}
         <button className="theme-toggle" onClick={toggleTheme} aria-label={theme === 'dark' ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro'}>
           <span aria-hidden="true">{theme === 'dark' ? '☀' : '☾'}</span><span className="theme-tooltip">{theme === 'dark' ? 'Modo claro' : 'Modo oscuro'}</span>

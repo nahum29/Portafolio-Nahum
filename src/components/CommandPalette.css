@@ -1,0 +1,20 @@
+.palette-overlay { position: fixed; inset: 0; z-index: 400; display: flex; justify-content: center; align-items: flex-start; padding: 12vh 20px 20px; background: #050a12a8; backdrop-filter: blur(3px); }
+.palette { width: min(620px, 100%); background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 14px; box-shadow: 0 24px 60px var(--shadow-color); overflow: hidden; }
+.palette-input-row { display: flex; align-items: center; gap: 10px; padding: 15px 16px; border-bottom: 1px solid var(--border-color); }
+.palette-prompt { color: var(--accent); font-size: 1.1rem; font-weight: 700; }
+.palette-input-row input { flex: 1; min-width: 0; background: none; border: 0; outline: none; color: var(--text-primary); font-size: .98rem; font-family: inherit; }
+.palette-input-row input::placeholder { color: var(--text-tertiary); }
+.palette kbd { font-family: inherit; font-size: .68rem; color: var(--text-tertiary); background: var(--bg-tertiary); border: 1px solid var(--border-color); border-bottom-width: 2px; border-radius: 5px; padding: 2px 6px; }
+.palette-list { list-style: none; margin: 0; padding: 7px; max-height: min(52vh, 380px); overflow-y: auto; }
+.palette-list li { display: flex; align-items: center; gap: 12px; padding: 11px 12px; border-radius: 9px; cursor: pointer; color: var(--text-primary); }
+.palette-list li.active { background: var(--accent-bg); }
+.palette-list li.active strong { color: var(--accent); }
+.palette-icon { width: 30px; height: 30px; flex-shrink: 0; display: grid; place-items: center; border-radius: 7px; background: var(--bg-tertiary); border: 1px solid var(--border-color); font-size: .92rem; }
+.palette-list li.active .palette-icon { background: var(--accent); color: var(--bg-secondary); }
+.palette-text { min-width: 0; flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.palette-text strong { font-size: .89rem; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.palette-text small { font-size: .74rem; color: var(--text-tertiary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.palette-empty { color: var(--text-tertiary) !important; font-size: .85rem; justify-content: center; padding: 26px 12px !important; cursor: default !important; }
+.palette-footer { display: flex; gap: 16px; padding: 10px 16px; border-top: 1px solid var(--border-color); background: var(--bg-tertiary); font-size: .72rem; color: var(--text-tertiary); }
+.palette-footer span { display: flex; align-items: center; gap: 5px; }
+.palette-hint { display: inline-flex; align-items: center; gap: 6px; }
